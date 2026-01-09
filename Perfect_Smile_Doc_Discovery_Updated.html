@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1 Discovery | Perfect Smile Doc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #001F3F;
+            --gold: #D3AA7C;
+            --gold-dark: #A67033;
+            --black: #000000;
+            --gray-dark: #6B6B6B;
+            --gray-light: #F5F5F5;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.15; margin-bottom: 1.5rem; }
+        h2 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 3rem; margin-top: 4rem; }
+        h3 { font-size: 1.3rem; line-height: 1.3; margin-bottom: 1.5rem; }
+
+        p { margin-bottom: 1rem; color: var(--gray-dark); line-height: 1.8; }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--navy);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-anchor {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-anchor:hover {
+            color: var(--gold);
+        }
+
+        .btn-sticky {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--white);
+            padding: 0.7rem 1.6rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(211, 170, 124, 0.25);
+        }
+
+        .btn-sticky:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(211, 170, 124, 0.35);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        section.dark {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        section.dark h2, section.dark h3 {
+            color: var(--white);
+        }
+
+        section.dark p {
+            color: rgba(255,255,255,0.85);
+        }
+
+        section.light {
+            background: var(--gray-light);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 7rem 0 5rem;
+        }
+
+        .hero h1 {
+            color: var(--navy);
+            max-width: 900px;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--gray-dark);
+            max-width: 800px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(211, 170, 124, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(211, 170, 124, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--navy);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .note {
+            background: rgba(211, 170, 124, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 1.2rem 1.5rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .col ul {
+            list-style: none;
+        }
+
+        .col li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .col.included li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .col.excluded li::before {
+            content: '−';
+            position: absolute;
+            left: 0.2rem;
+            color: var(--gray-dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Patient Journey - Single Row */
+        .journey-container {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: rgba(211, 170, 124, 0.08);
+            border-radius: 8px;
+        }
+
+        .journey-label {
+            font-size: 0.95rem;
+            text-align: center;
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .journey-flow {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .journey-step {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.8rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            min-width: 110px;
+        }
+
+        .journey-arrow {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .journey-summary {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--navy);
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* Marketing Discovery Section */
+        .discovery-sections {
+            margin-top: 2rem;
+        }
+
+        .discovery-subsection {
+            margin-bottom: 2.5rem;
+        }
+
+        .discovery-subsection h4 {
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .discovery-subsection ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .discovery-subsection li {
+            padding: 0.5rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .discovery-subsection li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* Deliverables Bullets */
+        .deliverable {
+            margin-bottom: 2.5rem;
+        }
+
+        .deliverable h3 {
+            margin-bottom: 1.2rem;
+        }
+
+        .deliverable ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .deliverable li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .deliverable li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* Table */
+        .table-wrap {
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            font-weight: 600;
+            background: rgba(211, 170, 124, 0.1);
+            border-bottom: none;
+        }
+
+        td:last-child {
+            text-align: right;
+        }
+
+        /* Hard Cap Badge */
+        .badge-cap {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+        }
+
+        /* Investment Cards */
+        .inv-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .inv-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .inv-card.highlight {
+            border: 2px solid var(--gold);
+            box-shadow: 0 8px 24px rgba(211, 170, 124, 0.15);
+        }
+
+        .price-label {
+            font-size: 0.95rem;
+            color: var(--gray-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-amount {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 0.3rem;
+        }
+
+        .price-struck {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .total-price {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--navy);
+            margin: 1.5rem 0;
+            font-weight: 700;
+        }
+
+        .badge-partner {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .terms {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .terms ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .terms li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .terms li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-box {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            border-top: 3px solid var(--gold);
+        }
+
+        .week {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-box ul {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .timeline-box li {
+            padding: 0.4rem 0;
+            color: var(--gray-dark);
+        }
+
+        /* Access Cards */
+        .access-intro {
+            background: rgba(211, 170, 124, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 2rem 0;
+            line-height: 1.8;
+        }
+
+        .access-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .access-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .access-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .access-card ul {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .access-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        .access-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        .checklist {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--gray-dark);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-tag {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+
+            .header-container {
+                padding: 0 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .nav-anchor, .btn-sticky {
+                margin-left: 0;
+                display: none;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .two-col, .inv-cards, .access-cards, .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .journey-flow {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .journey-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">RevOps Catalyst Group</a>
+            <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                <a href="#overview" class="nav-anchor">Overview</a>
+                <a href="#discovery" class="nav-anchor">Discovery</a>
+                <a href="#investment" class="nav-anchor">Investment</a>
+                <a href="#approve" class="btn-sticky">Approve</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Phase 1 Discovery: Perfect Smile Doc Revenue Growth</h1>
+            <p class="hero-sub">
+                Fractional Chief Revenue Officer engagement to identify and unlock the highest-impact revenue opportunities across your 3 locations.
+                <br><br>
+                Phase 1 is diagnostic only. Blueprint and Implementation are quoted separately after Discovery.
+            </p>
+            <div class="cta-group">
+                <a href="[INSERT APPROVAL OR INVOICE LINK]" class="btn-primary">Approve Phase 1 Discovery</a>
+                <a href="[INSERT CALENDAR LINK]" class="btn-secondary">Schedule Kickoff</a>
+            </div>
+            <div class="note">
+                <strong>Designed for Perfect Smile Doc:</strong> Centralized remote ops team across all locations using RingCentral + Dolphin with KPIs already tracked.
+            </div>
+        </div>
+    </section>
+
+    <!-- What We'll Discover -->
+    <section id="discovery" class="light">
+        <div class="container">
+            <h2>What Phase 1 Discovery Covers</h2>
+
+            <h3>Marketing Growth Engine</h3>
+            <div class="discovery-sections">
+                <div class="discovery-subsection">
+                    <h4>Website Conversion Review</h4>
+                    <ul>
+                        <li>Booking path and CTA clarity</li>
+                        <li>Mobile experience</li>
+                        <li>Location flow consistency (3 locations)</li>
+                        <li>Form capture vs call capture</li>
+                    </ul>
+                </div>
+
+                <div class="discovery-subsection">
+                    <h4>Google Business Profile Review</h4>
+                    <ul>
+                        <li>How GBP drives calls, directions, and inquiries</li>
+                        <li>Velocity and market positioning</li>
+                    </ul>
+                </div>
+
+                <div class="discovery-subsection">
+                    <h4>SEO and Organic Review</h4>
+                    <ul>
+                        <li>What in-house marketing is doing today</li>
+                        <li>What is tracked, what is not</li>
+                        <li>Service pages and location visibility scan</li>
+                    </ul>
+                </div>
+
+                <div class="discovery-subsection">
+                    <h4>Social and Content Engine Review</h4>
+                    <ul>
+                        <li>What they post and what offers exist</li>
+                        <li>What drives new patient inquiries</li>
+                        <li>Whether content supports conversion (trust, results, financing, FAQs)</li>
+                    </ul>
+                </div>
+
+                <div class="discovery-subsection">
+                    <h4>Mailers and Offline Marketing Review</h4>
+                    <ul>
+                        <li>What is sent, what offer, what tracking exists</li>
+                    </ul>
+                </div>
+
+                <div class="discovery-subsection">
+                    <h4>Referral Management Diagnostic</h4>
+                    <ul>
+                        <li>Current referral card offer and whether tracked</li>
+                        <li>How referrals are requested and followed up</li>
+                        <li>Where the process leaks (no ask, no tracking, no redemption loop)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Revenue Operations Engine (Inquiry to Starts)</h3>
+            <p>New Patient Inquiry handling through centralized remote team. Scheduled Exam workflow and booking quality. Exam Completed rate and no-show prevention. Treatment Offered process. Same Day Treatment Acceptance and follow-up pool. Same Day Starts workflow and handoffs.</p>
+
+            <!-- Patient Journey - Single Row -->
+            <div class="journey-container">
+                <p class="journey-label">Patient journey through your system:</p>
+                <div class="journey-flow">
+                    <div class="journey-step">New Patient Inquiry</div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step">Scheduled Exam</div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step">Exam Completed</div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step">Treatment Offered</div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step">Same Day Acceptance</div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step">Same Day Starts</div>
+                </div>
+                <p class="journey-summary">Marketing creates demand. RevOps converts demand into accepted treatment and starts. CRO ownership means both.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boundaries -->
+    <section id="overview">
+        <div class="container">
+            <h2>Discovery is Diagnostic Only</h2>
+
+            <div class="two-col">
+                <div class="col included">
+                    <h4>Included in Discovery</h4>
+                    <ul>
+                        <li>Gather inputs and validate existing KPI spreadsheets and definitions</li>
+                        <li>Review SOPs for structure and gaps</li>
+                        <li>Review RingCentral exports and a capped call sample</li>
+                        <li>Identify conversion leaks and breakdowns</li>
+                        <li>Produce Discovery Summary and lead debrief</li>
+                    </ul>
+                </div>
+
+                <div class="col excluded">
+                    <h4>Not Included (Blueprint + Implementation)</h4>
+                    <ul>
+                        <li>Building marketing department structure and operating rhythm</li>
+                        <li>Creating offers, campaigns, content calendars</li>
+                        <li>Rewriting SOPs, scripts, training teams</li>
+                        <li>Building dashboards and automations</li>
+                        <li>Implementing systems or managing ongoing execution</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2.5rem; font-weight: 600; color: var(--navy);">Blueprint and Implementation are quoted separately after Discovery.</p>
+        </div>
+    </section>
+
+    <!-- Hours & Cap -->
+    <section class="light">
+        <div class="container">
+            <h2>Tracked Hours, Transparent Reporting, Hard Cap</h2>
+
+            <p>This Phase 1 Discovery is time-tracked for accuracy and capped to prevent bloat. Weekly hours log shared with Ops Lead. Work pauses if cap is reached unless additional hours approved in writing.</p>
+
+            <span class="badge-cap">Hard Cap: 22 Hours</span>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kickoff and access alignment (Ops Lead)</td>
+                            <td>1.0</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Discovery audit</td>
+                            <td>6.0</td>
+                        </tr>
+                        <tr>
+                            <td>KPI baseline validation (spreadsheets)</td>
+                            <td>2.0</td>
+                        </tr>
+                        <tr>
+                            <td>SOP inventory and gap review</td>
+                            <td>2.0</td>
+                        </tr>
+                        <tr>
+                            <td>RingCentral performance review</td>
+                            <td>2.0</td>
+                        </tr>
+                        <tr>
+                            <td>Call sample review (up to 10 recordings)</td>
+                            <td>3.0</td>
+                        </tr>
+                        <tr>
+                            <td>Treatment Coordinator workflow diagnostic</td>
+                            <td>3.0</td>
+                        </tr>
+                        <tr>
+                            <td>Referral workflow diagnostic</td>
+                            <td>1.0</td>
+                        </tr>
+                        <tr>
+                            <td>Discovery Summary packaging + debrief call</td>
+                            <td>2.0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>22.0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+        <div class="container">
+            <h2>Timeline and Cadence</h2>
+            <p>Approximately 10 hours per week allocated to Perfect Smile Doc during Discovery.</p>
+
+            <div class="timeline">
+                <div class="timeline-box">
+                    <div class="week">Week 1</div>
+                    <ul>
+                        <li>Kickoff</li>
+                        <li>Marketing audit</li>
+                        <li>KPI validation</li>
+                        <li>SOP review</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-box">
+                    <div class="week">Week 2</div>
+                    <ul>
+                        <li>RingCentral review</li>
+                        <li>Call sample review</li>
+                        <li>TC diagnostic</li>
+                        <li>Referral diagnostic</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-box">
+                    <div class="week">Week 3 (Optional)</div>
+                    <ul>
+                        <li>Finalize summary</li>
+                        <li>Schedule debrief if needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="light">
+        <div class="container">
+            <h2>What You Receive at End of Phase 1</h2>
+
+            <div class="deliverable">
+                <h3>Deliverable 1: Discovery Summary (3 to 5 pages)</h3>
+                <ul>
+                    <li>Marketing inventory and current-state scorecard</li>
+                    <li>Patient journey map using Perfect Smile Doc terminology</li>
+                    <li>KPI baseline snapshot from spreadsheets plus RingCentral outputs</li>
+                    <li>Top 5 revenue leaks ranked by impact (Marketing vs RevOps)</li>
+                    <li>Inputs list for what Blueprint must design next</li>
+                </ul>
+            </div>
+
+            <div class="deliverable">
+                <h3>Deliverable 2: Debrief Call (60 minutes)</h3>
+                <ul>
+                    <li>Ops Lead (Doctor optional)</li>
+                    <li>Review findings and discuss implications</li>
+                    <li>Outline next phase approach</li>
+                </ul>
+            </div>
+
+            <div class="deliverable">
+                <h3>Deliverable 3: Blueprint Scope Outline (1 page)</h3>
+                <ul>
+                    <li>Quoted separately after Discovery</li>
+                    <li>Know exactly what Blueprint will deliver before committing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment -->
+    <section id="investment">
+        <div class="container">
+            <h2>Investment</h2>
+
+            <div class="inv-cards">
+                <div class="inv-card">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 2rem;">Standard Rate</h3>
+                    <div class="price-label">Normally billed at</div>
+                    <div class="price-amount">$50/hour</div>
+                    <div class="price-label" style="margin-top: 1.5rem;">22-hour cap:</div>
+                    <div class="total-price price-struck">$1,100</div>
+                </div>
+
+                <div class="inv-card highlight">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 2rem;">Perfect Smile Doc Partner Rate</h3>
+                    <div class="price-label">Discounted to</div>
+                    <div class="price-amount">$35/hour</div>
+                    <div class="price-label" style="margin-top: 1rem; font-size: 0.85rem; line-height: 1.5;">To earn credibility and build long-term partnership through Blueprint, Implementation, and ongoing revenue management</div>
+                    <div class="price-label" style="margin-top: 1.5rem;">22-hour cap:</div>
+                    <div class="total-price">$770</div>
+                    <span class="badge-partner">Credibility First, Long-Term Build Next</span>
+                </div>
+            </div>
+
+            <div class="terms">
+                <h4 style="color: var(--navy); margin-bottom: 1rem;">Payment Terms</h4>
+                <ul>
+                    <li>$770 due upfront to begin Discovery</li>
+                    <li>Weekly tracked hours log shared with Ops Lead</li>
+                    <li>Hard cap at 22 hours unless approved in writing</li>
+                </ul>
+            </div>
+
+            <div class="cta-group" style="justify-content: center; margin-top: 3rem;">
+                <a href="[INSERT APPROVAL OR INVOICE LINK]" class="btn-primary">Approve Phase 1 Discovery</a>
+                <a href="[INSERT CALENDAR LINK]" class="btn-secondary">Schedule Kickoff</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Needed -->
+    <section class="light">
+        <div class="container">
+            <h2>After Approval: Access and Inputs We Will Need</h2>
+
+            <div class="access-intro">
+                <p>To complete Phase 1 Discovery within the 22-hour cap, we need access to the systems and reports where Perfect Smile Doc already tracks marketing and patient journey performance. <strong>If system access cannot be granted, the Ops Lead can provide exports or screenshots.</strong></p>
+            </div>
+
+            <div class="access-cards">
+                <div class="access-card">
+                    <h4>Marketing Access</h4>
+                    <ul>
+                        <li>Website access: CMS admin or editor access</li>
+                        <li>Google Analytics 4 (GA4): Viewer access (Editor preferred)</li>
+                        <li>Google Business Profile (GBP): Manager access</li>
+                        <li>Google Search Console: performance and visibility data</li>
+                        <li>Any SEO reporting: existing reports or rank tracking</li>
+                        <li>Social media: active accounts access (Instagram, Facebook, TikTok, YouTube). If not possible, provide 90-day exported analytics screenshots</li>
+                        <li>Email or SMS marketing platform reporting (if used)</li>
+                        <li>Any other marketing tools: forms, chat, scheduling widgets, tracking, reputation management</li>
+                    </ul>
+                </div>
+
+                <div class="access-card">
+                    <h4>Lead and Call Data</h4>
+                    <ul>
+                        <li>RingCentral reporting access: call logs, answer rate, missed calls, callback tracking, time-of-day patterns</li>
+                        <li>Call recordings: up to 10 for Discovery (inquiry, price shoppers, reschedules)</li>
+                        <li>Scheduling workflow data: scheduling dashboards or exports currently used</li>
+                    </ul>
+                </div>
+
+                <div class="access-card">
+                    <h4>Patient Journey and Conversion Data</h4>
+                    <ul>
+                        <li>Dolphin PMS reporting exports (report-level data only, no clinical charts)</li>
+                        <li>New Patient Inquiry (if tracked)</li>
+                        <li>Scheduled Exam</li>
+                        <li>Exam Completed</li>
+                        <li>Treatment Offered</li>
+                        <li>Same Day Treatment Acceptance</li>
+                        <li>Same Day Starts</li>
+                        <li>Existing KPI spreadsheets (Sheets or Excel)</li>
+                        <li>Treatment Coordinator tracking (follow-up pool, pending cases, financing, same day starts)</li>
+                    </ul>
+                </div>
+
+                <div class="access-card">
+                    <h4>Current Processes and SOPs</h4>
+                    <ul>
+                        <li>SOP folder: lead handling, scheduling/confirmations, TC workflow, referrals</li>
+                        <li>Referral program materials: referral card offer and any tracking or policy notes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <strong>Quick Checklist:</strong> Website CMS | GA4 | GBP | Search Console | RingCentral exports | KPI Sheets | Dolphin exports | SOP folder | Social analytics | Referral materials
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">Why separate Discovery from Blueprint?</div>
+                <div class="faq-a">Discovery is diagnostic only. We need to understand your current state and identify revenue leaks before designing solutions. Blueprint and Implementation are quoted separately based on Discovery findings to ensure scope accuracy and prevent waste.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Does this include billing and collections?</div>
+                <div class="faq-a">No. Phase 1 Discovery focuses on marketing demand and patient journey conversion through Same Day Treatment Acceptance and Same Day Starts. Billing and collections optimization can be scoped as an optional add-on later if needed.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Who needs to be involved?</div>
+                <div class="faq-a">The Ops Lead is the primary contact throughout Discovery. The Doctor-owner is optional but welcome to join the final debrief call.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">When can we start?</div>
+                <div class="faq-a">Immediately after payment is received and initial access is confirmed. Kickoff can be scheduled within 3-5 business days.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="approve" class="dark">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: var(--white);">Ready to Identify Your Highest-Impact Revenue Opportunities?</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 700px; margin: 2rem auto;">Approve Phase 1 Discovery and we will schedule your kickoff within 3-5 business days.</p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="[INSERT APPROVAL OR INVOICE LINK]" class="btn-primary">Approve Phase 1 Discovery</a>
+                <a href="[INSERT CALENDAR LINK]" class="btn-secondary" style="background: transparent; border-color: var(--white); color: var(--white);">Schedule Kickoff</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">RevOps Catalyst Group</div>
+            <p class="footer-tag">
+                We increase revenue outside the chair by growing new patient demand and improving conversion through Exam Completed, Treatment Offered, Same Day Treatment Acceptance, and Same Day Starts.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
